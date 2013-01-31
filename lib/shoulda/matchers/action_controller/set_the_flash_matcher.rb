@@ -96,8 +96,8 @@ module Shoulda # :nodoc:
             @flash
           else
             @flash = @controller.flash.dup
-            used = @controller.flash.instance_variable_get(:@used).dup
-            @flash.instance_variable_set(:@used, used)
+            discard = @controller.flash.instance_variable_get(:@discard).dup
+            @flash.instance_variable_set(:@discard, discard)
             sweep_flash_if_necessary
             @flash
           end
